@@ -104,6 +104,16 @@ cp -rvf $TEMPLATE/layers .
 cp -rvf $TEMPLATE/src .
 cp -rvf $TEMPLATE/zscripts .
 
+# fix cdkapp name
+message "📝 fix cdkapp name"
+sed -i "s/cdkapp/${PROJ}/g" package.json
+sed -i "s/cdkapp/${PROJ}/g" az-cdk/envars.ts
+sed -i "s/CDK_/${PROJ^^}_/g" az-cdk/envars.ts
+sed -i "s/cdkapp/${PROJ}/g" src/__integ__/cognito.integ.ts
+sed -i "s/CDK_/${PROJ^^}_/g" src/__integ__/cognito.integ.ts
+sed -i "s/CDK_/${PROJ^^}_/g" src/__integ__/emails.integ.ts
+sed -i "s/cdkapp/${PROJ}/g" src/lambda/cognitoPostConfirm.ts
+
 # update dependencies
 message "🆕 update dependencies"
 npm-check-updates -u
