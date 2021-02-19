@@ -67,7 +67,7 @@ export const cfg = {
   GOOGLE_CLIENT_SECRET: envars.CDK_GOOGLE_CLIENT_SECRET,
 
   // cognito-messages
-  EMAIL_SUBJECT: 'cdkapp. Your confirmation code is {####}',
+  EMAIL_SUBJECT: 'cdkapp: Confirmation code',
   EMAIL_MSG: `<p>Hello,<p/>
 <p>Thank you for registering an account with us!</p>
 <p>Your confirmation code is <b>{####}<b></p>
