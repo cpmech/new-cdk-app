@@ -11,7 +11,8 @@
     "eslint": "eslint",
     "lint": "eslint --ignore-path .eslintignore . --ext ts --ext tsx --quiet --fix",
     "postinstall": "bash ./zscripts/npm_postinstall.bash",
-    "build": "rm -rf dist && rollup --config rollup.config-lambda.js",
+    "layers": "cd layers/nodejs && npm install",
+    "build": "npm run layers && rm -rf dist && rollup --config rollup.config-lambda.js",
     "cdk": "npm run build && bash ./zscripts/cdk.bash"
   },
   "devDependencies": {
