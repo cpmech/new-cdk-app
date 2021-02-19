@@ -78,6 +78,8 @@ if [[ $# == 0 ]]; then
     exit 1
 fi
 PROJ=$1
+ARRAY=(${PROJ//-/ })
+APP=${ARRAY[0]}    
 
 # create project
 message "🚀 create project"
@@ -106,13 +108,13 @@ cp -rvf $TEMPLATE/zscripts .
 
 # fix cdkapp name
 message "📝 fix cdkapp name"
-sed -i "s/cdkapp/${PROJ}/g" package.json
-sed -i "s/cdkapp/${PROJ}/g" az-cdk/envars.ts
-sed -i "s/CDK_/${PROJ^^}_/g" az-cdk/envars.ts
-sed -i "s/cdkapp/${PROJ}/g" src/__integ__/cognito.integ.ts
-sed -i "s/CDK_/${PROJ^^}_/g" src/__integ__/cognito.integ.ts
-sed -i "s/CDK_/${PROJ^^}_/g" src/__integ__/emails.integ.ts
-sed -i "s/cdkapp/${PROJ}/g" src/lambda/cognitoPostConfirm.ts
+sed -i "s/cdkapp/${APP}/g" package.json
+sed -i "s/cdkapp/${APP}/g" az-cdk/envars.ts
+sed -i "s/CDK_/${APP^^}_/g" az-cdk/envars.ts
+sed -i "s/cdkapp/${APP}/g" src/__integ__/cognito.integ.ts
+sed -i "s/CDK_/${APP^^}_/g" src/__integ__/cognito.integ.ts
+sed -i "s/CDK_/${APP^^}_/g" src/__integ__/emails.integ.ts
+sed -i "s/cdkapp/${APP}/g" src/lambda/cognitoPostConfirm.ts
 
 # update dependencies
 message "🆕 update dependencies"
