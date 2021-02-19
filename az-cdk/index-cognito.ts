@@ -8,10 +8,7 @@ const tableUsers = `${cfg.TABLE_USERS}-${cfg.STAGE.toUpperCase()}`;
 const app = new App();
 const stack = new Stack(app, `${cfg.KEY}-${cfg.STAGE}-cognito`);
 
-const urls =
-  cfg.STAGE === 'dev'
-    ? [`https://dev.${cfg.DOMAIN}/`, `https://localhost:3000/`]
-    : [`https://${cfg.DOMAIN}/`];
+const urls = cfg.STAGE === 'dev' ? [`https://dev.${cfg.DOMAIN}/`] : [`https://${cfg.DOMAIN}/`];
 
 const userVerification: UserVerificationConfig = {
   emailSubject: cfg.EMAIL_SUBJECT,
