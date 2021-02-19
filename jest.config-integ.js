@@ -4,5 +4,5 @@ module.exports = {
   testRegex: '((\\.|/)(integ))\\.[jt]sx?$',
   testPathIgnorePatterns: ['/dist/', '/node_modules/', '/cdk.out/'],
   modulePathIgnorePatterns: ['/cdk.out/', '/layers/'],
-  testEnvironment: '<rootDir>/jestAmplifySetup.js',
+  testEnvironment: '<rootDir>/jest.amplify.js',
 };
