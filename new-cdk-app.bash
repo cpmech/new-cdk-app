@@ -96,7 +96,7 @@ cp -av $TEMPLATE/jest.config-integ.js .
 cp -av $TEMPLATE/jest.config.js .
 cp -av $TEMPLATE/package.json .
 cp -av $TEMPLATE/README.md .
-cp -av $TEMPLATE/rollup.config-lambda.md .
+cp -av $TEMPLATE/rollup.config-lambda.js .
 cp -av $TEMPLATE/tsconfig.json .
 cp -rvf $TEMPLATE/.vscode .
 cp -rvf $TEMPLATE/az-cdk .
@@ -119,11 +119,16 @@ git add .eslintignore \
     .eslintrc.js \
     .gitignore \
     .prettierrc \
+    jest.amplify.js \
+    jest.config-integ.js \
     jest.config.js \
     package.json \
-    rollup.config.js \
+    README.md \
+    rollup.config-lambda.js \
     tsconfig.json \
     .vscode \
+    az-cdk \
+    layers \
     src \
     zscripts
 if [ "$USE_NPM" = "true" ]; then
